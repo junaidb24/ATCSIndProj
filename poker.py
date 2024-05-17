@@ -38,14 +38,28 @@ class Deck:
         
     def shuffle(self):
         #randomly shuffling the cards
-        random.shuffle(self.cards)
+        random.shuffle(self.cards) 
 
 class Hand:
-    def 
+    def __init__(self): #creating a players hand so we can give them cards
+        self.cards = []
+    def new_card(self,card):
+        self.cards.append(card) #adding a card to the hand
 
 class Game:
+    def __init__(self,num_of_players):
+        #creating a game with a specific amount of players
+        deck = Deck() 
+        deck.shuffle() #initalizing a deck and shuffling it, and then making the empty hands of the players
+        self.num_of_players = num_of_players
+        self.hands = []
 
-
+        for _ in range(num_of_players): 
+            hand = Hand()
+            for i in range(5):
+                hand.new_card(deck.deal_cards())
+            self.hands.append(hand)
+'''looping through the amount of players that are playing and dealing them 5 cards each'''
 
 
 
